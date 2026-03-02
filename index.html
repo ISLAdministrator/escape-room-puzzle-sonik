@@ -10,22 +10,30 @@ DO NOT let AI code for you!!
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Escape Room</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Escape Room</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>Escape Room</h1>
+<div class="game-content">
+    <h1 id="Escape-Room">Scattered Gym</h1>
+    <p id="welcome-text">Welcome! Find the correct code in order to escape.</p>
+    <div id="timer-box">You have 20 minutes...</div>
+    <h2 id="story-title">Story So Far</h2>
+    <p id="story-text">You wake up in the empty gym...All the electricity is gone.</p>
 
-  <p>
-    Write the story of your escape room here.
-  </p>
+    <button id="enter-game-btn" class="arrow-button">Enter Game ➜</button>
+    <button id="ok-btn" class="arrow-button" style="display: none;">OK</button>
+    
+    <button id="start-game-btn" class="arrow-button" style="display: none;">Now find the code</button>
+  
+    <p id="output"></p>
+</div>
+      
+        <p id="output"></p>
+    </div>
 
-  <button id="button">Click me</button>
-
-  <p id="output"></p>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

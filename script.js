@@ -1,12 +1,32 @@
-console.log("Script loaded");
+document.addEventListener('DOMContentLoaded', () => {
+    const enterBtn = document.getElementById('enter-game-btn');
+    const okBtn = document.getElementById('ok-btn');
+    const output = document.getElementById('output');
 
-// below is basic example code for using a button
-// you can use it, expand on it, or delete it
-// that all depends on your team's plan.
+    enterBtn.addEventListener('click', () => {
+        // Switch background to first-angle.jpg
+        document.body.classList.add('game-started');
+        
+        // Hide start screen
+        document.getElementById('welcome-text').style.display = 'none';
+        document.getElementById('timer-box').style.display = 'none';
+        document.getElementById('story-title').style.display = 'none';
+        document.getElementById('story-text').style.display = 'none';
+        document.getElementById('Escape-Room').style.display = 'none';
+        enterBtn.style.display = 'none';
 
-const button = document.getElementById("button");
-const output = document.getElementById("output");
+        // Show OK
+        output.textContent = "The game has begun...";
+        okBtn.style.display = 'block';
+    });
 
-button.addEventListener("click", function () {
-  output.textContent = "JavaScript is working.";
+    okBtn.addEventListener('click', () => {
+        // Hide OK button
+        okBtn.style.display = 'none';
+        
+        // Show "Now find the code" and keep the background!
+        output.innerHTML = `
+            <button class="arrow-button" id="start-search">Now find the code</button>
+        `;
+    });
 });
