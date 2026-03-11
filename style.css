@@ -1,24 +1,73 @@
 /* 1. THE MAIN BACKGROUND */
+/* style.css */
 body {
-    /* Make sure this name is EXACTLY what you see on GitHub */
-    background-image: url('gym%20photo.png'); 
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: white;
+
+    /* THE IMAGE SECTION */
+    background-image: url('/photos/gymphoto.png'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
+    
+    /* This red border is a test. If you see it, the CSS is working. */
+    border: 5px solid red; 
 }
 
-/* 2. THE BACKGROUND AFTER CLICKING "ENTER" */
+/* Switches background when you Enter Game */
 body.game-started {
-    /* Note the .jpg here! Your uploaded file was a .jpg */
-    background-image: url('first-angle.jpg');
+    /* Ensure the name matches your GitHub file exactly */
+    background-image: url('/photos/first-angle.jpg') !important;
+    background-size: cover;
+    background-position: center;
+    border: none; /* Removes the test borders */
 }
+/* 3. THE FINAL GAMEPLAY BACKGROUND */
+body.searching {
+    /* Replace 'third-photo.jpg' with your actual file name from GitHub */
+    background-image: url('/photos/statscreen.png') !important;
+    background-size: cover;
+    background-position: center;
+}
+/* Angles for the 360-degree rotation */
+body.angle-0 { background-image: url('/photos/angle2.png') !important; }
+body.angle-1 { background-image: url('/photos/right-view.jpg') !important; }
+body.angle-2 { background-image: url('/photos/back-view.jpg') !important; }
+body.angle-3 { background-image: url('/photos/left-view.jpg') !important; }
+
+/* Keep these common styles */
+body.angle-0, body.angle-1, body.angle-2, body.angle-3 {
+    background-size: cover;
+    background-position: center;
+}
+.game-content {
+    background-color: rgba(40, 40, 40, 0.9);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+.arrow-button {
+    background-color: #c2c9c3;
+    color: black;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
 
 .game-content {
     padding: 40px;

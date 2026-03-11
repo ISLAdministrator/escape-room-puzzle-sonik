@@ -6,7 +6,6 @@ You can edit it, add to it, and delete parts of it.
 
 DO NOT let AI code for you!!
 -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,23 +16,30 @@ DO NOT let AI code for you!!
 <body>
 
 <div class="game-content">
-    <h1 id="Escape-Room">Scattered Gym</h1>
-    <p id="welcome-text">Welcome! Find the correct code in order to escape.</p>
-    <div id="timer-box">You have 20 minutes...</div>
-    <h2 id="story-title">Story So Far</h2>
-    <p id="story-text">You wake up in the empty gym...All the electricity is gone.</p>
-
-    <button id="enter-game-btn" class="arrow-button">Enter Game ➜</button>
-    <button id="ok-btn" class="arrow-button" style="display: none;">OK</button>
-    
-    <button id="start-game-btn" class="arrow-button" style="display: none;">Now find the code</button>
-  
-    <p id="output"></p>
-</div>
-      
-        <p id="output"></p>
+    <div id="start-screen">
+        <p id="welcome-text">Welcome! Find the correct code in order to escape.</p>
+        <div id="timer-box">You have 20 minutes...</div>
+        <p id="story-text">You wake up in the empty gym...All the electricity is gone. What could have caused that? 
+            Explore the floor and find your way out!
+            
+            helping tip: move the arrows on your keyborad to move and observe the gym
+        </p>
+        <button id="enter-game-btn" class="arrow-button">Enter Game ➜</button>
     </div>
 
-    <script src="script.js"></script>
+    <div id="confirm-screen" style="display: none;">
+        <p>Ready to start the game?</p>
+        <div style="display: flex; gap: 20px; justify-content: center;">
+            <button id="yes-btn" class="arrow-button">✔</button>
+            <button id="no-btn" class="arrow-button" style="background-color: #e2d8d8;">✖</button>
+        </div>
+    </div>
+
+    <div id="play-screen" style="display: none;">
+        <button id="start-game-btn" class="arrow-button">Now find the code</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
