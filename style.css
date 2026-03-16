@@ -10,66 +10,33 @@ body {
     align-items: center;
     font-family: Arial, sans-serif;
     color: white;
-
-    /* THE IMAGE SECTION */
     background-image: url('/photos/gymphoto.png'); 
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    
-    /* This red border is a test. If you see it, the CSS is working. */
-    border: 5px solid red; 
+    overflow: hidden;
 }
 
-/* Switches background when you Enter Game */
 body.game-started {
-    /* Ensure the name matches your GitHub file exactly */
     background-image: url('/photos/first-angle.jpg') !important;
-    background-size: cover;
-    background-position: center;
-    border: none; /* Removes the test borders */
 }
-/* 3. THE FINAL GAMEPLAY BACKGROUND */
-body.searching {
-    /* Replace 'third-photo.jpg' with your actual file name from GitHub */
-    background-image: url('/photos/statscreen.png') !important;
-    background-size: cover;
-    background-position: center;
-}
-/* Angles for the 360-degree rotation */
-body.angle-0 { background-image: url('/photos/angle2.png') !important; }
-body.angle-1 { background-image: url('/photos/right-view.jpg') !important; }
-body.angle-2 { background-image: url('/photos/back-view.jpg') !important; }
-body.angle-3 { background-image: url('/photos/left-view.jpg') !important; }
 
-/* Keep these common styles */
-body.angle-0, body.angle-1, body.angle-2, body.angle-3 {
-    background-size: cover;
-    background-position: center;
+/* Angles 0-5 */
+body.angle-0 { background-image: url('/photos/statscreen.png') !important; }
+body.angle-1 { background-image: url('/photos/angle2.png') !important; }
+body.angle-2 { background-image: url('/photos/anotherangle.png') !important; }
+body.angle-3 { background-image: url('/photos/fourthangle.png') !important; }
+body.angle-4 { background-image: url('/photos/thirdangle.png') !important; }
+body.angle-5 { background-image: url('/photos/ratttt.png') !important; }
+
+body.angle-0, body.angle-1, body.angle-2, body.angle-3, body.angle-4, body.angle-5 {
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
 }
+
+/* UI Elements */
 .game-content {
-    background-color: rgba(40, 40, 40, 0.9);
-    padding: 40px;
-    border-radius: 20px;
-    text-align: center;
-    max-width: 500px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-}
-
-.arrow-button {
-    background-color: #c2c9c3;
-    color: black;
-    border: none;
-    padding: 15px 40px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 15px;
-}
-
-
-.game-content {
+    background-color: rgba(82, 33, 33, 0.9);
     padding: 40px;
     border-radius: 20px;
     text-align: center;
@@ -90,4 +57,127 @@ body.angle-0, body.angle-1, body.angle-2, body.angle-3 {
     border-radius: 50px;
     cursor: pointer;
     font-weight: bold;
+}
+
+/* TV Interaction */
+#tv-hotspot {
+    position: absolute;
+    top: 15%;
+    left: 8%;
+    width: 25vw;
+    height: 30vh;
+    cursor: pointer;
+    background: rgba(0, 255, 0, 0); /* Set to 0.3 to see the hit-box for testing */
+    z-index: 10;
+}
+
+.modal {
+    position: fixed;
+    z-index: 100;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #1a1a1a;
+    padding: 40px;
+    border: 3px solid lime;
+    text-align: center;
+}
+
+#code-input {
+    background: black;
+    color: lime;
+    border: 1px solid lime;
+    padding: 10px;
+    font-size: 24px;
+    text-align: center;
+    text-transform: uppercase;
+}
+/* Prevents the input from changing color when the browser tries to autofill */
+#code-input:-webkit-autofill,
+#code-input:-webkit-autofill:hover, 
+#code-input:-webkit-autofill:focus {
+    -webkit-text-fill-color: lime;
+    -webkit-box-shadow: 0 0 0px 1000px black inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+/* Styling for the persistent button during exploration */
+.ready-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #c2c9c3;
+    color: black;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    z-index: 50; /* Above the background, below modals */
+}
+
+/* Ensure buttons inside modals don't have too much margin */
+.modal-content .arrow-button {
+    margin-top: 10px;
+}
+/* Victory Background - Replace the URL with your final escape image */
+body.victory {
+    background-image: url('/photos/theend.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+/* Big Text Box in the middle */
+.victory-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200; /* Over everything */
+}
+
+.victory-box {
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 60px;
+    border: 5px solid gold;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 0 50px rgba(255, 215, 0, 0.5);
+    animation: fadeIn 1s ease-in;
+}
+
+.victory-box h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #ffd700;
+}
+
+.victory-box p {
+    font-size: 24px;
+    color: white;
+}
+/* Add this to the bottom of your style.css */
+.victory-box a.arrow-button {
+    background-color: #ffd700; /* Gold color to match the victory theme */
+    color: black;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.victory-box a.arrow-button:hover {
+    background-color: #fff;
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
 }
