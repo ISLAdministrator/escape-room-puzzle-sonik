@@ -17,14 +17,14 @@ body {
 }
 
 body.game-started {
-    background-image: url('/photos/first-angle.jpg') !important;
+    background-image: url('/photos/first-angle\ \(1\).png') !important;
 }
 
 /* Angles 0-5 */
 body.angle-0 { background-image: url('/photos/statscreen.png') !important; }
 body.angle-1 { background-image: url('/photos/angle2.png') !important; }
 body.angle-2 { background-image: url('/photos/anotherangle.png') !important; }
-body.angle-3 { background-image: url('/photos/fourthangle.png') !important; }
+body.angle-3 { background-image: url('/photos/ghghh.png') !important; }
 body.angle-4 { background-image: url('/photos/thirdangle.png') !important; }
 body.angle-5 { background-image: url('/photos/ratttt.png') !important; }
 
