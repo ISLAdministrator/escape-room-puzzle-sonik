@@ -10,14 +10,14 @@ body {
     align-items: center;
     font-family: Arial, sans-serif;
     color: white;
-    background-image: url('/photos/gymphoto.png'); 
+    background-image: url('photos/gymphoto.png'); 
     background-size: cover;
     background-position: center;
     overflow: hidden;
 }
 
 body.game-started {
-    background-image: url('/photos/first-angle\ \(1\).png') !important;
+    background-image: url('photos/first-angle\ \(1\).png') !important;
 }
 
 /* Angles 0-5 */
@@ -129,7 +129,7 @@ body.angle-0, body.angle-1, body.angle-2, body.angle-3, body.angle-4, body.angle
 }
 /* Victory Background - Replace the URL with your final escape image */
 body.victory {
-    background-image: url('/photos/theend.png') !important;
+    background-image: url('photos/theend.png') !important;
     background-size: cover !important;
     background-position: center !important;
 }
