@@ -6,26 +6,71 @@ You can edit it, add to it, and delete parts of it.
 
 DO NOT let AI code for you!!
 -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Escape Room</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Escape Room</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>Escape Room</h1>
+<div class="game-content">
+    <div id="start-screen">
+        <p id="welcome-text">Welcome! Find the correct code in order to escape.</p>
+        <p id="story-text">Explore the floor and find your way out!<br><br>
+            Helping tip: move the arrows on your keyboard to observe the gym.
+        </p>
+        <button id="enter-game-btn" class="arrow-button">Enter Game ➜</button>
+    </div>
 
-  <p>
-    Write the story of your escape room here.
-  </p>
+    <div id="confirm-screen" style="display: none;">
+        <p>Ready to start the game?</p>
+        <div style="display: flex; gap: 20px; justify-content: center;">
+            <button id="yes-btn" class="arrow-button">✔</button>
+            <button id="no-btn" class="arrow-button" style="background-color: #e2d8d8;">✖</button>
+        </div>
+    </div>
 
-  <button id="button">Click me</button>
+    <div id="play-screen" style="display: none;">
+        <button id="start-game-btn" class="arrow-button">Now find the code</button>
+    </div>
+</div>
 
-  <p id="output"></p>
+<button id="ready-code-btn" class="ready-btn" style="display: none;">Ready to enter the code?</button>
 
-  <script src="script.js"></script>
+<div id="decision-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <p>Ready to enter the code?</p>
+        <div style="display: flex; gap: 20px; justify-content: center;">
+            <button id="code-yes-btn" class="arrow-button" style="background-color: #28a745; color: white;">Yes</button>
+            <button id="code-no-btn" class="arrow-button" style="background-color: #dc3545; color: white;">No</button>
+        </div>
+    </div>
+</div>
+
+<div id="code-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <h3>ENTER ACCESS CODE</h3>
+        <input type="text" id="code-input" maxlength="3" placeholder="---">
+        <br><br>
+        <button id="submit-code" class="arrow-button">ENTER</button>
+        <button id="close-modal" class="arrow-button" style="background:#888;">CANCEL</button>
+        <p id="code-feedback" style="color: #ff4d4d; display: none; font-weight: bold; margin-top: 10px;">INCORRECT CODE</p>
+    </div>
+</div>
+<div id="victory-screen" class="victory-container" style="display: none;">
+    <div class="victory-box">
+        <h1>CONGRATULATIONS!</h1>
+        <p>You escaped......for now.</p>
+        <p style="font-size: 20px; margin-top: 20px;">Just remember your letter: <strong>S</strong>, you will sure need it.</p>
+        
+        <br>
+        <a href="https://isladministrator.github.io/escape-room-puzzle-kira-liza/" class="arrow-button" style="text-decoration: none; display: inline-block;">
+            Click here to go to Mr. Robertson Jones's office➜</a>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
